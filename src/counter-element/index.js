@@ -37,6 +37,11 @@ export class CounterElement extends HTMLElement {
     `;
   }
 
+  setProperties(props){
+    this.state = props;
+    this.render();
+  }
+
   _update(obj, prop, value){
     obj[prop] = value;
     this.setAttribute('value', value);
