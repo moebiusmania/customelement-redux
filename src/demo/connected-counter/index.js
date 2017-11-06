@@ -2,11 +2,11 @@
 
 import { CounterElement } from './../counter-element';
 import { store } from './../store';
-import { connect } from './../index';
+import { connect } from './../../index';
 
 class ConnectedCounter extends connect(store, CounterElement){
 
-  _mapStateToProps(state) {
+  _mapStateToProps(state){
     return {
         value: state.counter
     };
