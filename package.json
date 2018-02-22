@@ -1,6 +1,6 @@
 {
   "name": "customelement-redux",
-  "version": "1.0.0",
+  "version": "0.5.0",
   "description": "Implementation of one of @kevinpschaaf proposal for Redux/Custom Elements integration.",
   "main": "src/index.js",
   "repository": "https://github.com/moebiusmania/customelement-redux",
@@ -11,11 +11,11 @@
     "start": "webpack-dev-server --hot"
   },
   "dependencies": {
-    "redux": "^3.7.2"
+    "redux": "3.7.2"
   },
   "devDependencies": {
-    "gh-pages": "^1.0.0",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
+    "gh-pages": "1.1.0",
+    "webpack": "3.11.0",
+    "webpack-dev-server": "2.11.1"
   }
 }

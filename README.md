@@ -4,7 +4,7 @@ Implementation of one of [@kevinpschaaf](https://github.com/kevinpschaaf) propos
 ### Install
 The module will soon be available on NPM, right now you can add it from GitHub:
 ```
-$ yarn add https://github.com/moebiusmania/customelement-redux
+$ yarn add customelement-redux
 ```
 
 ### How to use
