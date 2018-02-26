@@ -1,8 +1,12 @@
 # customelement-redux
 Implementation of one of [@kevinpschaaf](https://github.com/kevinpschaaf) proposal for [Redux/Custom Elements integration](https://gist.github.com/kevinpschaaf/995c9d1fd0f58fe021b174c4238b38c3).
 
+The goal of this project is to provide a simple and thin layer to easily connect Redux store data and action dispatching to a standard Custom Element.
+
+This package follows the `react-redux` principles but contextualize them on the Custom Elements environment.
+
 ### Install
-The module will soon be available on NPM, right now you can add it from GitHub:
+You can install the package via Yarn or NPM:
 ```
 $ yarn add customelement-redux
 ```
@@ -35,7 +39,7 @@ customElements.define('connected-element', ConnectedElement);
 
 You can check fully working examples on the `./src/demo` folder.
 
-> HEADS UP: this module **only** syncs specified properties to Redux store paths, but it is not responsibile to refresh the view of your elements when the change happens. Data binding of internal properties with the view is easily handled by libraries like Polymer or HyperHTML.
+> HEADS UP: this module **only** syncs specified properties to Redux store paths, but it is not responsibile to refresh the view of your elements when the change happens. Data binding of internal properties with the template view is easily handled by libraries like Polymer, HyperHTML or Lit-HTML.
 
 ### Development
 On command line:
@@ -53,3 +57,6 @@ On the browser open:
 ```
 http://localhost:8081
 ```
+
+### License
+Released under the [MIT license](LICENSE).
