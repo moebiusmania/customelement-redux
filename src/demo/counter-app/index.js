@@ -2,6 +2,7 @@
 
 import { store } from './../store';
 import './../counter-element';
+import './../dispatcher-element';
 
 export class CounterApp extends HTMLElement {
 
@@ -23,8 +24,7 @@ export class CounterApp extends HTMLElement {
       <aside>
         <h4>Counter app</h4>
         <counter-element value="${this.counter}"></counter-element>
-        <button data-action="INCREMENT">+</button>
-        <button data-action="DECREMENT">-</button>
+        <dispatcher-element></dispatcher-element>
       </aside>
     `;
   }
@@ -41,10 +41,20 @@ export class CounterApp extends HTMLElement {
       this.render();
     });
 
-    this.addEventListener('click', (evt) => {
-      const subj = this.shadowRoot.activeElement || evt.__target;
-      const action = subj.dataset.action;
-      store.dispatch({ type: action });
+    // this.addEventListener('click', (evt) => {
+    //   const subj = this.shadowRoot.activeElement || evt.__target;
+    //   const action = subj.dataset.action;
+    //   store.dispatch({ type: action });
+    // });
+
+    const dispatcher = this.querySelector('dispatcher-element');
+    
+    this.addEventListener('increment', evt => {
+      store.dispatch({ type: 'INCREMENT' });
+    });
+
+    this.addEventListener('decrement', evt => {
+      store.dispatch({ type: 'DECREMENT' });
     });
   }
 }

@@ -32,7 +32,7 @@ export class CounterElement extends HTMLElement {
         }
       </style>
       <section>
-         <p>Total: <strong>${this.state.value}</strong></p>
+        <p>Total: <strong>${this.state.value}</strong></p>
       </section>
     `;
   }

@@ -17,6 +17,20 @@ export const connect = (store, superClass) => {
           store.subscribe(update);
           update();
         }
+
+
+        // Map dispatch to events
+        if (this._mapDispatchToEvents) {
+          const eventMap = this._mapDispatchToEvents(store.dispatch);
+          for (let type in eventMap) {
+            this.addEventListener(type, event => {
+              event.stopImmediatePropagation();
+              eventMap[type](event);
+            });
+          }
+        }
+
+        
       }
     
     }
