@@ -1,6 +1,6 @@
 {
   "name": "customelement-redux",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Implementation of one of @kevinpschaaf proposal for Redux/Custom Elements integration.",
   "main": "src/index.js",
   "repository": "https://github.com/moebiusmania/customelement-redux",
@@ -18,5 +18,16 @@
     "webpack": "4.0.1",
     "webpack-cli": "2.0.9",
     "webpack-dev-server": "3.0.0"
-  }
+  },
+  "keywords": [
+    "custom",
+    "element",
+    "elements",
+    "redux",
+    "web",
+    "component",
+    "components",
+    "integration",
+    "connector"
+  ]
 }
