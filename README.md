@@ -11,7 +11,7 @@ You can install the package via Yarn or NPM:
 $ yarn add customelement-redux
 ```
 
-### How to use
+### How to use - basic example
 The core idea is that you write regular Web Components and when you want to connect them to a Redux store just subclass them using the `connect` mixin.
 
 ```javascript
@@ -26,9 +26,18 @@ import { connect } from 'customelement-redux';
 class ConnectedElement extends connect(store, MyElement){
 
   // "bind" and internal property to a Redux state node
-  _mapStateToProps(state){
+  _mapStateToProps(state) {
     return {
-        value: state.value
+      value: state.value
+    };
+  }
+
+  // execute an action dispatch when a custom event is fired
+  _mapDispatchToEvents(dispatch) {
+    return {
+      'increment'(e) {
+        dispatch({ type: 'INCREMENT' });
+      }
     };
   }
 
@@ -40,6 +49,13 @@ customElements.define('connected-element', ConnectedElement);
 You can check fully working examples on the `./src/demo` folder.
 
 > HEADS UP: this module **only** syncs specified properties to Redux store paths, but it is not responsibile to refresh the view of your elements when the change happens. Data binding of internal properties with the template view is easily handled by libraries like Polymer, HyperHTML or Lit-HTML.
+
+### To-do
+* better documentation and demo
+* intermediate example with `reselect` & action creators
+* advanced example with `redux-thunk` or `redux-saga`
+* tests!
+* logo?
 
 ### Development
 On command line:

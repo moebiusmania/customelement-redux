@@ -7,6 +7,7 @@ module.exports = {
     entry: [
         './src/demo/index.js'
     ],
+    mode: 'development',
     output: {
         path: path.join(__dirname, './dist'),
         filename: 'demo.js',
