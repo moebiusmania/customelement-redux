@@ -9,12 +9,16 @@
   "private": false,
   "scripts": {
     "start": "webpack-dev-server --hot",
-    "deploy": "webpack & gh-pages -d ./dist"
+    "deploy": "webpack & gh-pages -d ./dist",
+    "test": "ava ./test/index.js --verbose"
   },
   "dependencies": {
     "redux": "3.7.2"
   },
   "devDependencies": {
+    "ava": "0.25.0",
+    "babel-preset-env": "1.6.1",
+    "babel-register": "6.26.0",
     "gh-pages": "1.1.0",
     "webpack": "4.0.1",
     "webpack-cli": "2.0.9",
@@ -30,5 +34,10 @@
     "components",
     "integration",
     "connector"
-  ]
+  ],
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  }
 }
