@@ -1,4 +1,6 @@
 # customelement-redux
+[![Build Status](https://travis-ci.org/moebiusmania/customelement-redux.svg?branch=master)](https://travis-ci.org/moebiusmania/customelement-redux)
+
 Implementation of one of [@kevinpschaaf](https://github.com/kevinpschaaf) proposal for [Redux/Custom Elements integration](https://gist.github.com/kevinpschaaf/995c9d1fd0f58fe021b174c4238b38c3).
 
 The goal of this project is to provide a simple and thin layer to easily connect Redux store data and action dispatching to a standard Custom Element.
