@@ -29,11 +29,20 @@ test('Connected class \'data\' and store \'counter\' match', t => {
   t.is(mixed.data, fromStore);
 });
 
-test('Dispatching \'INCREMENT\' updates both store and class', t => {
+test('Dispatching \'INCREMENT\' from store updates both store and class', t => {
   store.dispatch({ type: 'INCREMENT' });  
   const fromStore = store.getState().counter;
 
   t.is(fromStore, 25);
+  t.is(mixed.data, fromStore);
+});
+
+test('Dispatching \'SET\' from updates both store and class', t => {
+  const value = 42;
+  store.dispatch({ type: 'SET', payload: value });
+  const fromStore = store.getState().counter;
+
+  t.is(fromStore, value);
   t.is(mixed.data, fromStore);
 });
 

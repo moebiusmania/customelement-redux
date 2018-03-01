@@ -16,7 +16,7 @@ const counter = (state = { counter: 24 }, action) => {
     case 'DECREMENT':
       return Object.assign({}, state, { counter: state.counter - 1 });
     case 'SET':
-      const counter = action.data;
+      const counter = action.payload;
       return Object.assign({}, state, { counter });
     default:
       return state;
