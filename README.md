@@ -54,11 +54,13 @@ You can check fully working examples on the `./src/demo` folder.
 
 > HEADS UP: this module **only** syncs specified properties to Redux store paths, but it is not responsibile to refresh the view of your elements when the change happens. Data binding of internal properties with the template view is easily handled by libraries like Polymer, HyperHTML or Lit-HTML.
 
-### To-do
+### To-do for v1.0.0
 * better documentation and demo
 * intermediate example with `reselect` & action creators
 * advanced example with `redux-thunk` or `redux-saga`
-* tests!
+* ~~tests (with Ava)!~~
+* linting (with XO)
+* ~~CI (with Travis)~~
 * logo?
 
 ### Development

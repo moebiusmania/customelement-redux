@@ -1,4 +1,4 @@
-// Main test
+// Main test suite
 
 import test from 'ava';
 import { connect } from './../src/index';
@@ -37,7 +37,15 @@ test('Dispatching \'INCREMENT\' from store updates both store and class', t => {
   t.is(mixed.data, fromStore);
 });
 
-test('Dispatching \'SET\' from updates both store and class', t => {
+test('Dispatching \'INCREMENT\' from class updates both store and class', t => {
+  mixed.increment();
+  const fromStore = store.getState().counter;
+
+  t.is(fromStore, 26);
+  t.is(mixed.data, fromStore);
+});
+
+test('Dispatching \'SET\' from store updates both store and class', t => {
   const value = 42;
   store.dispatch({ type: 'SET', payload: value });
   const fromStore = store.getState().counter;
@@ -46,3 +54,10 @@ test('Dispatching \'SET\' from updates both store and class', t => {
   t.is(mixed.data, fromStore);
 });
 
+test('Dispatching \'SET\' from class updates both store and class', t => {
+  mixed.set(99);
+  const fromStore = store.getState().counter;
+
+  t.is(fromStore, 99);
+  t.is(mixed.data, fromStore);
+});

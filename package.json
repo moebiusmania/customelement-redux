@@ -1,6 +1,6 @@
 {
   "name": "customelement-redux",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Implementation of one of @kevinpschaaf proposal for Redux/Custom Elements integration.",
   "main": "src/index.js",
   "repository": "https://github.com/moebiusmania/customelement-redux",
@@ -13,6 +13,7 @@
     "test": "ava ./test/index.js --verbose"
   },
   "dependencies": {
+    "@webcomponents/custom-elements": "1.0.8",
     "redux": "3.7.2"
   },
   "devDependencies": {
@@ -20,6 +21,7 @@
     "babel-preset-env": "1.6.1",
     "babel-register": "6.26.0",
     "gh-pages": "1.1.0",
+    "jsdom-wc": "11.0.0-alpha-1",
     "webpack": "4.0.1",
     "webpack-cli": "2.0.9",
     "webpack-dev-server": "3.0.0"
