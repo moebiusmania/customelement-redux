@@ -1,15 +1,14 @@
 // Main test suite
 
 import test from 'ava';
-import { connect } from './../src/index';
-import { 
-  example, store, connected 
-} from './mocks';
+import store from './libs/store';
+import Example from './libs/example';
+import Connected from './libs/connected';
 
-const mixed = new connected();
+const mixed = new Connected();
 
 test('Mock class initial data', t => {
-  const mock = new example();
+  const mock = new Example();
   t.is(mock.data, 42);
 });
 
@@ -30,7 +29,7 @@ test('Connected class \'data\' and store \'counter\' match', t => {
 });
 
 test('Dispatching \'INCREMENT\' from store updates both store and class', t => {
-  store.dispatch({ type: 'INCREMENT' });  
+  store.dispatch({type: 'INCREMENT'});
   const fromStore = store.getState().counter;
 
   t.is(fromStore, 25);
@@ -47,7 +46,7 @@ test('Dispatching \'INCREMENT\' from class updates both store and class', t => {
 
 test('Dispatching \'SET\' from store updates both store and class', t => {
   const value = 42;
-  store.dispatch({ type: 'SET', payload: value });
+  store.dispatch({type: 'SET', payload: value});
   const fromStore = store.getState().counter;
 
   t.is(fromStore, value);

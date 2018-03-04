@@ -1,7 +1,8 @@
 # customelement-redux
 [![Build Status](https://travis-ci.org/moebiusmania/customelement-redux.svg?branch=master)](https://travis-ci.org/moebiusmania/customelement-redux)
 ![Custom Elements v1](https://img.shields.io/badge/custom--elements-v1-blue.svg)
-![MIT license](	https://img.shields.io/github/license/mashape/apistatus.svg)
+![MIT license](https://img.shields.io/github/license/mashape/apistatus.svg)
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
 
 Implementation of one of [@kevinpschaaf](https://github.com/kevinpschaaf) proposal for [Redux/Custom Elements integration](https://gist.github.com/kevinpschaaf/995c9d1fd0f58fe021b174c4238b38c3).
 
@@ -59,7 +60,7 @@ You can check fully working examples on the `./src/demo` folder.
 * intermediate example with `reselect` & action creators
 * advanced example with `redux-thunk` or `redux-saga`
 * ~~tests (with Ava)!~~
-* linting (with XO)
+* ~~linting (with XO)~~
 * ~~CI (with Travis)~~
 * logo?
 

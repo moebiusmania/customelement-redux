@@ -1,12 +1,9 @@
 'use strict';
 
-export const connect = (store, superClass) => {
-  
+export default (store, superClass) => {
   return class extends superClass {
-
     constructor() {
       super();
-      
       // Map state to props
       if (this._mapStateToProps) {
         const setProps = this.setProperties ?
@@ -18,20 +15,18 @@ export const connect = (store, superClass) => {
         update();
       }
 
-
       // Map dispatch to events
       if (this._mapDispatchToEvents) {
         const eventMap = this._mapDispatchToEvents(store.dispatch);
-        for (let type in eventMap) {
-          this.addEventListener(type, event => {
-            event.stopImmediatePropagation();
-            eventMap[type](event);
-          });
+        for (const type in eventMap) {
+          if (type) {
+            this.addEventListener(type, event => {
+              event.stopImmediatePropagation();
+              eventMap[type](event);
+            });
+          }
         }
       }
-      
     }
-  
-  }
-
-}
+  };
+};

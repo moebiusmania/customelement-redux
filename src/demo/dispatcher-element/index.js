@@ -1,14 +1,13 @@
 'use strict';
 
-export class DispatcherElement extends HTMLElement {
-  
-  constructor(){
+export default class DispatcherElement extends HTMLElement {
+  constructor() {
     super();
 
     this.shadow = this.attachShadow({mode: 'open'});
   }
 
-  render(){
+  render() {
     this.shadow.innerHTML = `
       <section>
         <button data-action="increment">+</button>
@@ -17,10 +16,10 @@ export class DispatcherElement extends HTMLElement {
     `;
   }
 
-  connectedCallback(){
+  connectedCallback() {
     this.render();
 
-    this.addEventListener('click', (evt) => {
+    this.addEventListener('click', evt => {
       const subj = this.shadowRoot.activeElement || evt.__target;
       const action = subj.dataset.action;
       this.dispatchEvent(

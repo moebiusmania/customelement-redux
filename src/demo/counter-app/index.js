@@ -1,19 +1,18 @@
 'use strict';
 
-import { store } from './../store';
+import {store} from './../store';
 import './../counter-element';
 import './../dispatcher-element';
 
-export class CounterApp extends HTMLElement {
-
-  constructor(){
+export default class CounterApp extends HTMLElement {
+  constructor() {
     super();
 
     this.shadow = this.attachShadow({mode: 'open'});
     this.counter = store.getState().counter;
   }
 
-  render(){
+  render() {
     this.shadow.innerHTML = `
       <style>
         aside{
@@ -29,11 +28,11 @@ export class CounterApp extends HTMLElement {
     `;
   }
 
-  action(event){
+  action(event) {
     console.log(event);
   }
 
-  connectedCallback(){
+  connectedCallback() {
     this.render();
 
     store.subscribe(() => {
@@ -41,20 +40,12 @@ export class CounterApp extends HTMLElement {
       this.render();
     });
 
-    // this.addEventListener('click', (evt) => {
-    //   const subj = this.shadowRoot.activeElement || evt.__target;
-    //   const action = subj.dataset.action;
-    //   store.dispatch({ type: action });
-    // });
-
-    const dispatcher = this.querySelector('dispatcher-element');
-    
-    this.addEventListener('increment', evt => {
-      store.dispatch({ type: 'INCREMENT' });
+    this.addEventListener('increment', () => {
+      store.dispatch({type: 'INCREMENT'});
     });
 
-    this.addEventListener('decrement', evt => {
-      store.dispatch({ type: 'DECREMENT' });
+    this.addEventListener('decrement', () => {
+      store.dispatch({type: 'DECREMENT'});
     });
   }
 }

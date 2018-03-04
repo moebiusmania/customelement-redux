@@ -10,7 +10,9 @@
   "scripts": {
     "start": "webpack-dev-server --hot",
     "deploy": "webpack & gh-pages -d ./dist",
-    "test": "ava ./test/index.js --verbose"
+    "test:lint": "xo ./src ./test",
+    "test:unit": "ava ./test/index.js --verbose",
+    "test": "npm run test:lint && npm run test:unit"
   },
   "dependencies": {
     "@webcomponents/custom-elements": "1.0.8",
@@ -20,11 +22,13 @@
     "ava": "0.25.0",
     "babel-preset-env": "1.6.1",
     "babel-register": "6.26.0",
+    "eslint-config-xo-space": "0.18.0",
     "gh-pages": "1.1.0",
     "jsdom-wc": "11.0.0-alpha-1",
     "webpack": "4.0.1",
     "webpack-cli": "2.0.9",
-    "webpack-dev-server": "3.0.0"
+    "webpack-dev-server": "3.0.0",
+    "xo": "0.20.3"
   },
   "keywords": [
     "custom",
@@ -41,5 +45,12 @@
     "require": [
       "babel-register"
     ]
+  },
+  "xo": {
+    "env": ["browser"],
+    "space": true,
+    "rules": {
+      "import/no-unassigned-import": "off"
+    }
   }
 }

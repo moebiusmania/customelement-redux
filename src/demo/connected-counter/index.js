@@ -1,21 +1,19 @@
 'use strict';
 
-import { CounterElement } from './../counter-element';
-import { store } from './../store';
-import { connect } from './../../index';
+import CounterElement from './../counter-element';
+import {store} from './../store';
+import connect from './../..';
 
-class ConnectedCounter extends connect(store, CounterElement){
-
-  _mapStateToProps(state){
+class ConnectedCounter extends connect(store, CounterElement) {
+  _mapStateToProps(state) {
     return {
-        value: state.counter
+      value: state.counter
     };
   }
 
-  connectedCallback(){
+  connectedCallback() {
     this.render();
   }
-
 }
 
 customElements.define('connected-counter', ConnectedCounter);

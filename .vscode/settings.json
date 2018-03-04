@@ -1,0 +1,12 @@
+{
+  "xo.enable": true,
+  "xo.options": {
+    "env": [
+      "browser"
+    ],
+    "space": true,
+    "rules": {
+      "import/no-unassigned-import": "off"
+    }
+  }
+}
