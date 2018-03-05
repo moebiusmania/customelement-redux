@@ -1,6 +1,6 @@
 {
   "name": "customelement-redux",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Implementation of one of @kevinpschaaf proposal for Redux/Custom Elements integration.",
   "main": "src/index.js",
   "repository": "https://github.com/moebiusmania/customelement-redux",
