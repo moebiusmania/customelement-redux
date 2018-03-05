@@ -1,17 +1,14 @@
-'use strict';
 
 export default class DispatcherElement extends HTMLElement {
-  constructor() {
-    super();
-
-    this.shadow = this.attachShadow({mode: 'open'});
-  }
-
   render() {
-    this.shadow.innerHTML = `
+    this.innerHTML = `
       <section>
-        <button data-action="increment">+</button>
-        <button data-action="decrement">-</button>
+        <button 
+          data-action="increment" 
+          class="button outline">+</button>
+        <button 
+          data-action="decrement" 
+          class="button outline">-</button>
       </section>
     `;
   }
@@ -20,7 +17,7 @@ export default class DispatcherElement extends HTMLElement {
     this.render();
 
     this.addEventListener('click', evt => {
-      const subj = this.shadowRoot.activeElement || evt.__target;
+      const subj = evt.target;
       const action = subj.dataset.action;
       this.dispatchEvent(
         new CustomEvent(action, {bubbles: true, composed: true})

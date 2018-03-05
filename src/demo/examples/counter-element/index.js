@@ -7,7 +7,6 @@ export default class CounterElement extends HTMLElement {
   constructor() {
     super();
 
-    this.shadow = this.attachShadow({mode: 'open'});
     this.state = {
       value: 0
     };
@@ -20,15 +19,7 @@ export default class CounterElement extends HTMLElement {
   }
 
   render() {
-    this.shadow.innerHTML = `
-      <style>
-        section{
-          border: 1px solid #ddd;
-          padding: 1px 7px;
-          margin: 15px 0;
-          font-family: Helvetica, Arial, sans;
-        }
-      </style>
+    this.innerHTML = `
       <section>
         <p>Total: <strong>${this.state.value}</strong></p>
       </section>

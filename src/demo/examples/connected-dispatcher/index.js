@@ -1,8 +1,8 @@
 'use strict';
 
 import DispatcherElement from './../dispatcher-element';
-import {store} from './../store';
-import connect from './../..';
+import {store} from './../../store';
+import connect from './../../..';
 
 class ConnectedDispatcher extends connect(store, DispatcherElement) {
   _mapDispatchToEvents(dispatch) {

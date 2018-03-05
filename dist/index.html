@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>customelement-redux | DEMO</title>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/oxalorg/sakura/master/css/sakura.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>customelement-redux | Docs & Demos</title>
 
-    <script>
-        window.addEventListener('WebComponentsReady', function(){
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = "./demo.js";
-          document.body.appendChild(script);
-        });
-      </script>
-    <script src="https://cdn.rawgit.com/webcomponents/webcomponentsjs/master/webcomponents-lite.js"></script>
+  <script>
+    window.addEventListener('WebComponentsReady', function(){
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = "./demo.js";
+      document.body.appendChild(script);
+    });
+  </script>
+  <script src="https://cdn.rawgit.com/webcomponents/webcomponentsjs/master/webcomponents-sd-ce.js"></script>
 </head>
 <body>
 
-    <main class="container">
-        <h1>customelement-redux</h1>
-        <hr>
-        <h3>Stateless element</h3>
-        <counter-element value="2"></counter-element>
-        <h3>Mediator element</h3>
-        <counter-app></counter-app>
-        <h3>Connected counter</h3>
-        <connected-counter></connected-counter>
-        <h3>Connected dispatcher</h3>
-        <connected-dispatcher></connected-dispatcher>
-    </main>
+  <main class="container">
+    <h1>customelement-redux</h1>
+    <hr>
+    <h3>Stateless element</h3>
+    <counter-element value="2"></counter-element>
+    <h3>Mediator element</h3>
+    <counter-app></counter-app>
+    <h3>Connected counter</h3>
+    <connected-counter></connected-counter>
+    <h3>Connected dispatcher</h3>
+    <connected-dispatcher></connected-dispatcher>
+  </main>
     
 </body>
 </html>
